@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SampleAPI</name>
+    </assembly>
+    <members>
+        <member name="M:SampleAPI.Controllers.AuthenticationController.Authenticate(SampleAPI.Controllers.AuthenticationController.AuthenticationRequestBody)">
+             <summary>
+             Get API Security token for valid user and application product id
+             </summary>
+             <param name="authenticationRequestBody"></param>
+             <returns>An ActionResult of type string containing authentication token</returns>  
+             <remarks>
+             Sample request:
+            
+                 POST /AuthenticationRequestBody
+                     "userName": "admin",
+                     "password": "admin",
+                     "productId": "5000A-400-3000B"
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributionYears">
+            <summary>
+            Get a list of years that have contributions
+            </summary>
+            <returns>An ActionResult of type List of contribution years</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributionsChartData(System.Int32,System.String)">
+            <summary>
+            Get a list of Contributions Chart Data by Fund and Year
+            </summary>
+            <returns>An ActionResult of type List of Contribution Chart Data by Fund and Year</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributionsAnnualReportData(System.DateTime)">
+            <summary>
+            Get a total contributions for a selected date
+            </summary>
+            <returns>An ActionResult of type List of DailyContributionData</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributionsAnnualReportData(System.String)">
+            <summary>
+            Get a list of Contributions by Year
+            </summary>
+            <returns>An ActionResult of type List of Contribution Chart Data by Fund and Year</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributions">
+            <summary>
+            Get a list of Contributions
+            </summary>
+            <returns>An ActionResult of type IEnumerable of Contribution</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributionsView">
+            <summary>
+            Get a list of Contributions
+            </summary>
+            <returns>An ActionResult of type IEnumerable of Contribution</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContributionByContributor(System.Int32)">
+            <summary>
+            Get an Contributions by Contributor Id
+            </summary>
+            <param name="contributorId">The id of the Contributor you want to get</param>
+            <returns>An ActionResult of type Contribution</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.GetContribution(System.Int32)">
+            <summary>
+            Get an Contribution by Contribution Id
+            </summary>
+            <param name="ContributionId">The id of the Contribution you want to get</param>
+            <returns>An ActionResult of type Contribution</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.CreateContribution(Data.DTOs.ContributionForCreation)">
+             <summary>
+             Adding a new Contribution
+             </summary>
+             <param name="Contribution"></param>
+             <returns></returns> 
+             <remarks>
+             Sample request:
+            
+                 POST /Contribution
+                 {
+                   "contributionDate": "4/21/2023",     
+                   "amount": 10,     
+                   "checkNumber": 0,
+                   "comments": "string",
+                   "fundId": 2,                               
+                   "contributorId": 2
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.UpdateContribution(System.Int32,Data.DTOs.ContributionForCreation)">
+             <summary>
+             Updates an Contribution by Contribution id
+             </summary>
+             <param name="ContributionId"></param>
+             <param name="Contribution"></param>
+             <returns></returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Contribution
+                 {
+                   "contributionDate": "4/21/2023",     
+                   "amount": 20,     
+                   "checkNumber": 0,
+                   "comments": "string",
+                   "fundId": 2,                               
+                   "contributorId": 2
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributionsController.DeleteContribution(System.Int32)">
+            <summary>
+            Deletes an Contribution by Contribution id
+            </summary>
+            <param name="ContributionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributorsController.GetContributors">
+            <summary>
+            Get a list of Contributors
+            </summary>
+            <returns>An ActionResult of type IEnumerable of Contributor</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributorsController.GetContributor(System.Int32)">
+            <summary>
+            Get an Contributor by Contributor Id
+            </summary>
+            <param name="ContributorId">The id of the Contributor you want to get</param>
+            <returns>An ActionResult of type Contributor</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributorsController.GetContributorContributions(System.Int32)">
+            <summary>
+            Get Contributions by Contributor Id
+            </summary>
+            <param name="ContributorId">The id of the Contributor you want to get</param>
+            <returns>An ActionResult of List of Contributions</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributorsController.CreateContributor(Data.DTOs.ContributorForCreation)">
+             <summary>
+             Adding a new Contributor
+             </summary>
+             <param name="Contributor"></param>
+             <returns></returns> 
+             <remarks>
+             Sample request:
+            
+                 POST /Contributor
+                 {
+                    "name": "Full Name",        
+                    "address": "100 Main St",        
+                    "city": "Fort Smith",
+                    "stateCode": "AR",
+                    "zipCode": "72908",                    
+                    "phone": "479 555-1212",        
+                    "email": "myemail@gmail.com",        
+                    "Comments": "optional comments" 
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributorsController.UpdateContributor(System.Int32,Data.DTOs.ContributorForCreation)">
+             <summary>
+             Updates an Contributor by Contributor id
+             </summary>
+             <param name="ContributorId"></param>
+             <param name="Contributor"></param>
+             <returns></returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Contributor
+                 {
+                    "name": "Full Name",        
+                    "address": "100 Main St",        
+                    "city": "Fort Smith",
+                    "stateCode": "AR",
+                    "zipCode": "72908",                    
+                    "phone": "479 555-1212",     
+                    "email": "myemail@gmail.com",        
+                    "Comments": "optional comments" 
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.ContributorsController.DeleteContributor(System.Int32)">
+            <summary>
+            Deletes an Contributor by Contributor id
+            </summary>
+            <param name="ContributorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.FundsController.GetFunds">
+            <summary>
+            Get a list of Funds
+            </summary>
+            <returns>An ActionResult of type IEnumerable of Fund</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.FundsController.GetFund(System.Int32)">
+            <summary>
+            Get an Fund by Fund Id
+            </summary>
+            <param name="FundId">The id of the Fund you want to get</param>
+            <returns>An ActionResult of type Fund</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.FundsController.CreateFund(Data.DTOs.FundForCreation)">
+             <summary>
+             Adding a new Fund
+             </summary>
+             <param name="Fund"></param>
+             <returns></returns> 
+             <remarks>
+             Sample request:
+            
+                 POST /Fund
+                 {
+                    "fundName": "Name of fund",                      
+                    "comments": "optional comments" 
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.FundsController.UpdateFund(System.Int32,Data.DTOs.FundForCreation)">
+             <summary>
+             Updates an Fund by Fund id
+             </summary>
+             <param name="FundId"></param>
+             <param name="Fund"></param>
+             <returns></returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /Fund
+                 {
+                    "fundName": "description of Fund",
+                    "comments": "optional comments" 
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.FundsController.DeleteFund(System.Int32)">
+            <summary>
+            Deletes an Fund by Fund id
+            </summary>
+            <param name="FundId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.StatesController.GetStates">
+            <summary>
+            Get a list of states
+            </summary>
+            <returns>An ActionResult of type IEnumerable of State</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.UsersController.GetUserRoles">
+            <summary>
+            Get a list of user roles
+            </summary>
+            <returns>An ActionResult of type IEnumerable of UserRole</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.UsersController.GetRegisteredUsers">
+            <summary>
+            Get a list of registered users
+            </summary>
+            <returns>An ActionResult of type IEnumerable of RegisteredUser</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.UsersController.GetRegisteredUser(System.Int32)">
+            <summary>
+            Get an Registered User by Id
+            </summary>
+            <param name="Id">The id of the registered user you want to get</param>
+            <returns>An ActionResult of type Fund</returns>
+        </member>
+        <member name="M:SampleAPI.Controllers.UsersController.CreateFund(Data.DTOs.RegisteredUserForCreation)">
+             <summary>
+             Create a Registered User
+             </summary>
+             <param name="RegisteredUser"></param>
+             <returns></returns>
+             <remarks>
+             Sample request:
+            
+                 POST /RegisteredUser
+                 {
+                   "userId": "myUserId",     
+                   "userPassword": "mypassword",   
+                   "userName": "My User Name",
+                   "userEmail": "myemail@gmail.com",                          
+                   "userRoleId": 2
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.UsersController.UpdateRegisteredUser(System.Int32,Data.DTOs.RegisteredUserForCreation)">
+             <summary>
+             Updates a Registered User by Id
+             </summary>
+             <param name="Id"></param>
+             <param name="RegisteredUser"></param>
+             <returns></returns>
+             <remarks>
+             Sample request:
+            
+                 PUT /RegisteredUser
+                 {
+                   "userId": "myUserId",     
+                   "userPassword": "mypassword",   
+                   "userName": "My User Name",
+                   "userEmail": "myemail@gmail.com",                          
+                   "userRoleId": 2
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:SampleAPI.Controllers.UsersController.DeleteRegisteredUser(System.Int32)">
+            <summary>
+            Deletes an RegisteredUser by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

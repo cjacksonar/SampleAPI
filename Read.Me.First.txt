@@ -1,0 +1,5 @@
+To use the project:
+_ Build the projects to make sure no errors
+- Publish SampleAPI.Database  
+- Change connection string in SampleAPI/Classes/Globals.cs
+- Set SampleAPI as startup project
