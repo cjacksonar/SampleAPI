@@ -3,4 +3,4 @@ _ Build the projects to make sure no errors
 - Publish SampleAPI.Database  
 - Change connection string in SampleAPI/Classes/Globals.cs
 - Set SampleAPI as startup project
-made this change
+- Refer to GitHub ReadMe for more information
