@@ -12,8 +12,9 @@ Steps to use this sample application:
      ![image](https://github.com/cjacksonar/SampleAPI/assets/34042711/60d2fa55-7634-45d4-97e4-8fad2355d1d3)
    7. Click Execute. It should check the credentials in the database, which contains sample data, and return a token as shown below.
       ![image](https://github.com/cjacksonar/SampleAPI/assets/34042711/634fac41-5157-420c-bf79-26d4d54bedc2)
-   8. Copy the token using the clipboard icon next to the Download button and then click Authorize and paste it and click Authorize and then Close as shown below.
+   8. Copy the token using the clipboard icon next to Download button as shown below.
       ![image](https://github.com/cjacksonar/SampleAPI/assets/34042711/dccdcae2-a4ce-4504-99cf-05663a81ab1c)
+   9. Click Authorize button, paste the token, click Authorize, then Close.
 
 You should now be able to perform the API actions now that you are authorized with the Authentication token.
 Using Select a Definition, select 2.0. which allows you to view a list of states without authorization.
